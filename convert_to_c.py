@@ -5,13 +5,10 @@ def read_binary_file(file_path):
 def convert_to_hex(byte_data):
     # Agrupamos los datos de 8 en 8
     byte_data = [byte_data[i:i+8] for i in range(0, len(byte_data), 8)]
-    print ("La longitud de byte_data es: ", len(byte_data))
-    #print (byte_data)
     # Convertimos cada byte a su representación en hexadecimal
     resu = []
     for i in range(len(byte_data)):
         byte = sum([byte_data[i][j] << j for j in range(8)])
-        print ('El valor de byte es: ', byte)
         # Añadimos el valor en hexadecimal a la lista resu
         resu.append(f'0x{byte:02X}')
 
